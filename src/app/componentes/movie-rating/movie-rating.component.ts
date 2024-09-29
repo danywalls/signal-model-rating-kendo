@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { RatingComponent } from '@progress/kendo-angular-inputs';
 
 @Component({
@@ -9,10 +9,9 @@ import { RatingComponent } from '@progress/kendo-angular-inputs';
   styleUrl: './movie-rating.component.scss',
 })
 export class MovieRatingComponent {
-  rating = input(4);
-  ratingChange = output<number>();
+  rating = model(4);
 
   onRatingChange(newRating: number) {
-    this.ratingChange.emit(newRating);
+    this.rating.update(() => newRating);
   }
 }

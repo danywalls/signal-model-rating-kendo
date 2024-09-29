@@ -1,11 +1,9 @@
-<ng-container>
-  @for (movie of movies(); track movie) {
-    <h3>{{ movie.title }}</h3>
+@for (movie of movies(); track movie) {
+  <h3>{{ movie.title }}</h3>
 
-    <app-movie-rating [(rating)]="movie.rating"></app-movie-rating>
+  <app-movie-rating [(rating)]="movie.rating" (ratingChange)="onRatingChange($event)"></app-movie-rating>
 
-    <p>Current rating: {{ movie.rating }} stars</p>
-  }
+  <p>Current rating: {{ movie.rating }} stars</p>
+}
 
 
-</ng-container>

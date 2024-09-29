@@ -24,4 +24,8 @@ export class AppComponent {
 
     { title: 'Dunkirk', rating: 3 },
   ]);
+
+  onRatingChange($event: unknown) {
+    console.log($event);
+  }
 }
